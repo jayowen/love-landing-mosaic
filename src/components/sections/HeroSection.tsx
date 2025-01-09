@@ -10,12 +10,14 @@ export const HeroSection = () => {
     <section className="relative container mx-auto px-4 py-16 md:py-24 overflow-hidden">
       {/* Background Image with overlay */}
       <div 
-        className="absolute inset-0 -z-10 opacity-20 bg-cover bg-center w-full h-full"
+        className="absolute inset-0 -z-10 bg-cover bg-center w-full h-full"
         style={{
           backgroundImage: "url('/lovable-uploads/f81aa8ef-4d47-4bf3-ae1f-c0bce34d905f.png')",
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
-          backgroundSize: 'cover'
+          backgroundSize: 'cover',
+          opacity: '0.1',
+          filter: 'contrast(1.2) brightness(0.9)'
         }}
       />
       <div className="flex flex-col md:flex-row items-center justify-between gap-12">
