@@ -16,7 +16,10 @@ const Index = () => {
             <p className="text-xl md:text-2xl text-gray-600 mb-8">
               Timeless Wisdom for Dating, Marriage, and Intimacy
             </p>
-            <PreOrderButton />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
+              <PreOrderButton />
+              <RequestChapterForm />
+            </div>
           </div>
           <div className="flex-1 flex justify-center animate-fadeIn">
             <img
