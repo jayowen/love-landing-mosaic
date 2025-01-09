@@ -26,7 +26,7 @@ export default {
         foreground: "hsl(var(--foreground))",
         book: {
           red: "#B91C1C",
-          gold: "#D4AF37"
+          gold: "#F97316" // Changed from gold to deep orange
         },
         primary: {
           DEFAULT: "hsl(var(--primary))",

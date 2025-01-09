@@ -15,7 +15,7 @@ export const PreOrderButton = () => {
   return (
     <Button
       onClick={handlePreOrder}
-      className="bg-book-gold hover:bg-book-gold/90 text-black font-semibold px-8 py-6 text-lg rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+      className="bg-book-gold hover:bg-book-gold/90 text-white font-semibold px-8 py-6 text-lg rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
     >
       Pre-Order Now
     </Button>

@@ -7,7 +7,14 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-16 md:py-24">
+      <section className="relative container mx-auto px-4 py-16 md:py-24">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 -z-10 opacity-20 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/lovable-uploads/b6ce3f81-9e6f-4563-8b75-0db9d7b61f8e.png')",
+          }}
+        />
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="flex-1 animate-fadeIn">
             <h1 className="font-serif text-4xl md:text-6xl font-bold text-book-red mb-2">
