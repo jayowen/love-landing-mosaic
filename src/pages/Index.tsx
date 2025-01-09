@@ -3,6 +3,7 @@ import { BenefitsSection } from "@/components/sections/BenefitsSection";
 import { AuthorSection } from "@/components/sections/AuthorSection";
 import { CTASections } from "@/components/sections/CTASections";
 import { PreOrderBonusSection } from "@/components/sections/PreOrderBonusSection";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { Footer } from "@/components/sections/Footer";
 
 const Index = () => {
@@ -11,6 +12,7 @@ const Index = () => {
       <HeroSection />
       <BenefitsSection />
       <PreOrderBonusSection />
+      <TestimonialsSection />
       <AuthorSection />
       <CTASections />
       <Footer />
