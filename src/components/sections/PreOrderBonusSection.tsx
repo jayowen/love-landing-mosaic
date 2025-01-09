@@ -5,11 +5,11 @@ export const PreOrderBonusSection = () => {
   return (
     <section className="bg-gradient-to-br from-gray-50 to-white py-16">
       <div className="container mx-auto px-4">
-        <h2 className="font-serif text-3xl md:text-4xl text-center mb-12 animate-fade-in">
+        <h2 className="font-serif text-3xl md:text-4xl text-center mb-12 animate-[fadeIn_0.8s_ease-out]">
           Pre-Order Exclusive Bonuses
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
+          <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-[fadeIn_1s_ease-out]">
             <div className="flex items-center gap-4 mb-4">
               <div className="bg-book-red/10 p-3 rounded-full">
                 <FileText className="w-6 h-6 text-book-red" />
@@ -32,7 +32,7 @@ export const PreOrderBonusSection = () => {
             </ul>
           </div>
 
-          <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in [animation-delay:200ms]">
+          <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-[fadeIn_1.2s_ease-out]">
             <div className="flex items-center gap-4 mb-4">
               <div className="bg-book-gold/10 p-3 rounded-full">
                 <Video className="w-6 h-6 text-book-gold" />
@@ -55,7 +55,7 @@ export const PreOrderBonusSection = () => {
             </ul>
           </div>
         </div>
-        <div className="flex justify-center mt-12 animate-fade-in [animation-delay:400ms]">
+        <div className="flex justify-center mt-12 animate-[fadeIn_1.4s_ease-out]">
           <PreOrderButton />
         </div>
       </div>
