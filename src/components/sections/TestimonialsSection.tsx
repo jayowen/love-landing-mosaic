@@ -3,28 +3,28 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const testimonials = [
   {
-    name: "Pastor David Kim",
-    role: "Lead Pastor",
+    name: "Ryan Kwon",
+    role: "Pastor",
     image: "/lovable-uploads/3dd9417c-0c99-4e5b-ab65-475c66cc8cf4.png",
-    quote: "This book transformed how I view relationships in the church community. A must-read for every Christian leader.",
+    quote: "Living Your Love Story meets you where you are and leads you to the redemptive hope we all need for our own love stories.",
   },
   {
-    name: "Pastor Phil Thompson",
-    role: "Senior Pastor",
+    name: "Pastor Joby Martin",
+    role: "Pastor",
     image: "/lovable-uploads/df3ce96a-cc7b-4de1-b3ce-09afaed08c3e.png",
-    quote: "A powerful resource that bridges biblical wisdom with practical relationship advice. Truly transformative.",
+    quote: "This book will help you navigate the complexities of relationships, sex, and marriage if you will lean in.",
   },
   {
-    name: "Sarah Anderson",
-    role: "Marriage Counselor",
+    name: "Heidi St. John",
+    role: "Author",
     image: "/lovable-uploads/29bc5aa2-e2ad-483c-8dac-2466effb654b.png",
-    quote: "I've recommended this book to countless couples. The principles inside are both timeless and practical.",
+    quote: "This book will encourage you as you navigate a sexually confused culture through the eyes of a disciple of Jesus.",
   },
   {
-    name: "Dr. Marcus Johnson",
-    role: "Family Therapist",
+    name: "Léonce B. Crump Jr.",
+    role: "Pastor",
     image: "/lovable-uploads/2794af1c-ca66-42fe-bf18-1f7cfab476c7.png",
-    quote: "An essential guide for anyone seeking to build stronger, more meaningful relationships based on biblical principles.",
+    quote: "Phil offers us a welcome addition to the volumes written on Song of Solomon, which will greatly help the Church.",
   },
 ];
 
