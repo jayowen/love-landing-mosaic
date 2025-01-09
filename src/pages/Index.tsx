@@ -10,9 +10,12 @@ const Index = () => {
       <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="flex-1 animate-fadeIn">
-            <h1 className="font-serif text-4xl md:text-6xl font-bold text-book-red mb-6">
+            <h1 className="font-serif text-4xl md:text-6xl font-bold text-book-red mb-2">
               Living Your Love Story
             </h1>
+            <a href="#author" className="no-underline">
+              <p className="italic text-gray-600 mb-6">by Phil Hopper</p>
+            </a>
             <p className="text-xl md:text-2xl text-gray-600 mb-8">
               Timeless Wisdom for Dating, Marriage, and Intimacy
             </p>
@@ -63,8 +66,7 @@ const Index = () => {
       </section>
 
       {/* Author Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
+      <section id="author" className="py-16 md:py-24 bg-gray-50">
           <div className="max-w-4xl mx-auto">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="w-full md:w-1/3">
@@ -82,7 +84,6 @@ const Index = () => {
               </div>
             </div>
           </div>
-        </div>
       </section>
 
       {/* Pre-order CTA */}
