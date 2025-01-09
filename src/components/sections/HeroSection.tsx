@@ -7,12 +7,12 @@ export const HeroSection = () => {
       <div 
         className="absolute inset-0 -z-10 bg-cover bg-center w-full h-full"
         style={{
-          backgroundImage: "url('/lovable-uploads/a043b138-c8f9-4927-a938-33eaa4466c3a.png')",
+          backgroundImage: "url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=2574&auto=format&fit=crop')",
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
           backgroundSize: 'cover',
-          opacity: '0.3',
-          filter: 'brightness(0.8) contrast(1.2)'
+          opacity: '0.15',
+          filter: 'brightness(0.9) contrast(1.1)'
         }}
       />
       <div className="flex flex-col md:flex-row items-center justify-between gap-12">
