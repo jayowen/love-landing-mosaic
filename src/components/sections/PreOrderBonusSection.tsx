@@ -1,4 +1,5 @@
 import { FileText, Video } from "lucide-react";
+import { PreOrderButton } from "@/components/PreOrderButton";
 
 export const PreOrderBonusSection = () => {
   return (
@@ -53,6 +54,9 @@ export const PreOrderBonusSection = () => {
               </li>
             </ul>
           </div>
+        </div>
+        <div className="flex justify-center mt-12 animate-fade-in [animation-delay:400ms]">
+          <PreOrderButton />
         </div>
       </div>
     </section>
