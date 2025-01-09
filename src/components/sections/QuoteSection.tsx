@@ -14,15 +14,6 @@ export const QuoteSection = () => {
                 </cite>
               </footer>
             </div>
-            <div 
-              className="absolute inset-0 -z-10 opacity-10"
-              style={{
-                backgroundImage: "url('/lovable-uploads/b639ec73-e921-4db1-aed3-bebabadd8a13.png')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                filter: "grayscale(1)"
-              }}
-            />
           </blockquote>
         </div>
       </div>
