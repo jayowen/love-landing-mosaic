@@ -15,8 +15,8 @@ export const HeroSection = () => {
           backgroundImage: "url('/lovable-uploads/f81aa8ef-4d47-4bf3-ae1f-c0bce34d905f.png')",
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
-          backgroundSize: 'cover',
-          opacity: '0.1',
+          backgroundSize: '100%',
+          opacity: '1',
           filter: 'contrast(1.2) brightness(0.9)'
         }}
       />
