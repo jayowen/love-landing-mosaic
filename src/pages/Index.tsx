@@ -7,12 +7,15 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       {/* Hero Section */}
-      <section className="relative container mx-auto px-4 py-16 md:py-24">
+      <section className="relative container mx-auto px-4 py-16 md:py-24 overflow-hidden">
         {/* Background Image */}
         <div 
-          className="absolute inset-0 -z-10 opacity-20 bg-cover bg-center"
+          className="absolute inset-0 -z-10 opacity-20 bg-cover bg-center w-full h-full"
           style={{
-            backgroundImage: "url('/lovable-uploads/b6ce3f81-9e6f-4563-8b75-0db9d7b61f8e.png')",
+            backgroundImage: "url('/lovable-uploads/f81aa8ef-4d47-4bf3-ae1f-c0bce34d905f.png')",
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover'
           }}
         />
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
