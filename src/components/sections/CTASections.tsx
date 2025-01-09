@@ -41,7 +41,7 @@ export const CTASections = () => {
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-6xl mx-auto">
             <div className="w-full md:w-1/3">
               <img
-                src="/lovable-uploads/83303342-0894-4c7d-ad7e-5028632482e2.png"
+                src="/lovable-uploads/e14845c2-6129-4913-8c1a-b172f196a2cd.png"
                 alt="Living Your Love Story Book Cover"
                 className="w-full max-w-[300px] mx-auto shadow-xl rounded-lg"
               />
