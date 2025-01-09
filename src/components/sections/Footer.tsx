@@ -82,9 +82,19 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-red-600 text-center text-red-200">
-          <p>&copy; {new Date().getFullYear()} Phil Hopper. All rights reserved.</p>
+        {/* Copyright and Credits */}
+        <div className="mt-12 pt-8 border-t border-red-600 text-center space-y-2">
+          <p className="text-red-200">&copy; {new Date().getFullYear()} Phil Hopper. All rights reserved.</p>
+          <p className="text-red-200">
+            <a 
+              href="http://businessbldrs.com/ministry-blueprint/" 
+              className="hover:text-white transition-colors"
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              Site Built by Ministry Builders
+            </a>
+          </p>
         </div>
       </div>
     </footer>
