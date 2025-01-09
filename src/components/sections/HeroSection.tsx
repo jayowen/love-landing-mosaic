@@ -1,14 +1,9 @@
 import { PreOrderButton } from "@/components/PreOrderButton";
 import { RequestChapterForm } from "@/components/RequestChapterForm";
 
-/**
- * Hero section component displaying the main book information and call-to-action buttons
- * Features a background image with overlay and responsive layout
- */
 export const HeroSection = () => {
   return (
     <section className="relative container mx-auto px-4 py-16 md:py-24 overflow-hidden">
-      {/* Background Image with overlay */}
       <div 
         className="absolute inset-0 -z-10 bg-cover bg-center w-full h-full"
         style={{

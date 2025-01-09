@@ -6,13 +6,13 @@ import { Footer } from "@/components/sections/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <main className="min-h-screen">
       <HeroSection />
       <BenefitsSection />
       <AuthorSection />
       <CTASections />
       <Footer />
-    </div>
+    </main>
   );
 };
 
