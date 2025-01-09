@@ -99,3 +99,19 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Scroll Animation Observer */
+@layer utilities {
+  .scroll-animate {
+    animation-play-state: paused;
+  }
+
+  .scroll-animate.animate {
+    animation-play-state: running;
+  }
+}
+
+/* Add scroll behavior */
+html {
+  scroll-behavior: smooth;
+}

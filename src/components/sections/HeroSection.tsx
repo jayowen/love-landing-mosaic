@@ -5,14 +5,15 @@ export const HeroSection = () => {
   return (
     <section className="relative container mx-auto px-4 py-16 md:py-24 overflow-hidden">
       <div 
-        className="absolute inset-0 -z-10 bg-cover bg-center w-full h-full"
+        className="absolute inset-0 -z-10 bg-cover bg-center w-full h-full transform transition-transform duration-1000"
         style={{
           backgroundImage: "url('/lovable-uploads/ece6e66d-08ae-4528-8e63-02dae192e08a.png')",
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           opacity: '0.15',
-          filter: 'brightness(0.9) contrast(1.1)'
+          filter: 'brightness(0.9) contrast(1.1)',
+          transform: 'translateY(var(--scroll-offset, 0))',
         }}
       />
       <div className="flex flex-col md:flex-row items-center justify-between gap-12">
