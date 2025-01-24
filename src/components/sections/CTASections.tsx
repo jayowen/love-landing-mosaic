@@ -50,16 +50,16 @@ export const CTASections = () => {
   return (
     <>
       {/* Retailer Links Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-book-red">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+          <div className="flex flex-nowrap justify-center items-center gap-8 md:gap-12 overflow-x-auto">
             {retailers.map((retailer) => (
               <a
                 key={retailer.name}
                 href={retailer.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-opacity hover:opacity-80"
+                className="transition-opacity hover:opacity-80 flex-shrink-0"
               >
                 <img
                   src={retailer.image}
