@@ -12,8 +12,8 @@ export const PreOrderButton = () => {
     }
     
     toast({
-      title: "Order initiated!",
-      description: "You'll be redirected to complete your purchase.",
+      title: "Ready to order!",
+      description: "Please complete the form below to order your copy.",
     });
   };
 
