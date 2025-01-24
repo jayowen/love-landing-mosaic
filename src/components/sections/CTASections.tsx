@@ -3,9 +3,6 @@ import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 
-/**
- * Combined CTA sections component containing retailer links and free chapter CTAs
- */
 export const CTASections = () => {
   const { toast } = useToast();
   const [email, setEmail] = useState("");
@@ -50,9 +47,9 @@ export const CTASections = () => {
   return (
     <>
       {/* Retailer Links Section */}
-      <section className="py-16 bg-book-red">
+      <section className="py-12 bg-book-red">
         <div className="container mx-auto px-4">
-          <div className="flex flex-nowrap justify-center items-center gap-8 md:gap-12 overflow-x-auto">
+          <div className="flex flex-nowrap justify-center items-center gap-6 md:gap-8 overflow-x-auto px-4">
             {retailers.map((retailer) => (
               <a
                 key={retailer.name}
@@ -64,7 +61,7 @@ export const CTASections = () => {
                 <img
                   src={retailer.image}
                   alt={`Buy on ${retailer.name}`}
-                  className="h-12 md:h-16 w-auto object-contain"
+                  className="h-10 md:h-12 w-auto object-contain"
                 />
               </a>
             ))}
