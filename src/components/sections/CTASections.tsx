@@ -1,17 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useToast } from "@/components/ui/use-toast";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 export const CTASections = () => {
-  useEffect(() => {
-    // Load HubSpot form
-    if ((window as any).hbspt) {
-      (window as any).hbspt.forms.create({
-        region: "na1",
-        portalId: "45592170",
-        formId: "1b36054b-938b-4d83-9046-95ba2cea2f38",
-        target: "#hubspot-cta-form"
-      });
-    }
-  }, []);
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    email: "",
+    firstname: "",
+    lastname: ""
+  });
 
   const retailers = [
     {
@@ -30,6 +29,62 @@ export const CTASections = () => {
       url: "https://www.booksamillion.com/p/Living-Your-Love-Story/Phil-Hopper/9780768483529?id=9377499569056"
     }
   ];
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const portalId = "45592170";
+    const formId = "1b36054b-938b-4d83-9046-95ba2cea2f38";
+    const url = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
+
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          fields: [
+            {
+              name: 'email',
+              value: formData.email
+            },
+            {
+              name: 'firstname',
+              value: formData.firstname
+            },
+            {
+              name: 'lastname',
+              value: formData.lastname
+            }
+          ],
+          context: {
+            pageUri: window.location.href,
+            pageName: document.title
+          }
+        })
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Success!",
+          description: "Your free chapter is on its way to your inbox.",
+        });
+        setFormData({ email: "", firstname: "", lastname: "" });
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was a problem submitting your request. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -77,9 +132,45 @@ export const CTASections = () => {
               <p className="text-xl mb-8 max-w-2xl">
                 Get a free chapter and discover how this book can transform your relationships.
               </p>
-              <div id="hubspot-cta-form" className="max-w-md mx-auto md:mx-0">
-                {/* HubSpot form will be loaded here */}
-              </div>
+              <form onSubmit={handleSubmit} className="max-w-md mx-auto md:mx-0 space-y-4">
+                <div>
+                  <Input
+                    type="text"
+                    placeholder="First Name"
+                    value={formData.firstname}
+                    onChange={(e) => setFormData(prev => ({ ...prev, firstname: e.target.value }))}
+                    required
+                    className="border-book-red focus-visible:ring-book-red"
+                  />
+                </div>
+                <div>
+                  <Input
+                    type="text"
+                    placeholder="Last Name"
+                    value={formData.lastname}
+                    onChange={(e) => setFormData(prev => ({ ...prev, lastname: e.target.value }))}
+                    required
+                    className="border-book-red focus-visible:ring-book-red"
+                  />
+                </div>
+                <div>
+                  <Input
+                    type="email"
+                    placeholder="Email Address"
+                    value={formData.email}
+                    onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                    required
+                    className="border-book-red focus-visible:ring-book-red"
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-book-red hover:bg-book-gold text-white font-semibold py-6 rounded-full transition-all duration-300"
+                >
+                  {isSubmitting ? "Sending..." : "Get Free Chapter"}
+                </Button>
+              </form>
             </div>
           </div>
         </div>
