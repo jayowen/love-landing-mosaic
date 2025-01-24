@@ -19,6 +19,9 @@ const Index = () => {
       <AuthorSection />
       <ForewordSection />
       <CTASections />
+      <section id="order" className="scroll-mt-16">
+        {/* The scroll-mt-16 class adds margin to account for any fixed headers */}
+      </section>
       <Footer />
     </main>
   );
