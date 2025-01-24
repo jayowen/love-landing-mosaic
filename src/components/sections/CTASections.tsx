@@ -20,17 +20,17 @@ export const CTASections = () => {
     {
       name: "Amazon",
       image: "/lovable-uploads/3d778331-9f37-47e4-8434-f481b2438325.png",
-      url: "https://www.amazon.com"
+      url: "https://www.amazon.com/Living-Your-Love-Story-Timeless/dp/0768483522/ref=sr_1_1"
     },
     {
       name: "Barnes & Noble",
       image: "/lovable-uploads/12aa9831-54d3-476f-b933-2e9e647439bd.png",
-      url: "https://www.barnesandnoble.com"
+      url: "https://www.barnesandnoble.com/w/living-your-love-story-phil-hopper/1146150250?ean=9780768483529"
     },
     {
       name: "Books A Million",
       image: "/lovable-uploads/0ac8953e-56bc-4a44-9cc6-2b34abadeb92.png",
-      url: "https://www.booksamillion.com"
+      url: "https://www.booksamillion.com/p/Living-Your-Love-Story/Phil-Hopper/9780768483529?id=9377499569056"
     },
     {
       name: "Bookshop",
