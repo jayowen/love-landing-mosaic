@@ -1,20 +1,17 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { useToast } from "@/hooks/use-toast";
-import { useState } from "react";
+import { useEffect } from "react";
 
 export const CTASections = () => {
-  const { toast } = useToast();
-  const [email, setEmail] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Chapter request received!",
-      description: "Check your email for the free chapter.",
-    });
-    setEmail("");
-  };
+  useEffect(() => {
+    // Load HubSpot form
+    if ((window as any).hbspt) {
+      (window as any).hbspt.forms.create({
+        region: "na1",
+        portalId: "45592170",
+        formId: "1b36054b-938b-4d83-9046-95ba2cea2f38",
+        target: "#hubspot-cta-form"
+      });
+    }
+  }, []);
 
   const retailers = [
     {
@@ -87,22 +84,9 @@ export const CTASections = () => {
               <p className="text-xl mb-8 max-w-2xl">
                 Get a free chapter and discover how this book can transform your relationships.
               </p>
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto md:mx-0">
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="flex-grow text-base"
-                />
-                <Button 
-                  type="submit"
-                  className="bg-book-red hover:bg-book-red/90 text-white px-8"
-                >
-                  Get Chapter
-                </Button>
-              </form>
+              <div id="hubspot-cta-form" className="max-w-md mx-auto md:mx-0">
+                {/* HubSpot form will be loaded here */}
+              </div>
             </div>
           </div>
         </div>

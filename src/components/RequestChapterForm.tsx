@@ -1,21 +1,23 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { useToast } from "@/hooks/use-toast";
-import { useState } from "react";
+import { useEffect } from "react";
 
 export const RequestChapterForm = () => {
-  const { toast } = useToast();
-  const [email, setEmail] = useState("");
+  useEffect(() => {
+    // Load HubSpot form when dialog opens
+    const loadForm = () => {
+      if ((window as any).hbspt) {
+        (window as any).hbspt.forms.create({
+          region: "na1",
+          portalId: "45592170",
+          formId: "1b36054b-938b-4d83-9046-95ba2cea2f38",
+          target: "#hubspot-chapter-form"
+        });
+      }
+    };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Chapter request received!",
-      description: "Check your email for the free chapter.",
-    });
-    setEmail("");
-  };
+    loadForm();
+  }, []);
 
   return (
     <Dialog>
@@ -31,24 +33,9 @@ export const RequestChapterForm = () => {
         <DialogHeader>
           <DialogTitle className="font-serif text-2xl">Get Your Free Chapter</DialogTitle>
         </DialogHeader>
-        <form onSubmit={handleSubmit} className="space-y-4 mt-4">
-          <div>
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="w-full"
-            />
-          </div>
-          <Button 
-            type="submit"
-            className="w-full bg-book-red hover:bg-book-red/90 text-white"
-          >
-            Send Me the Chapter
-          </Button>
-        </form>
+        <div id="hubspot-chapter-form" className="mt-4">
+          {/* HubSpot form will be loaded here */}
+        </div>
       </DialogContent>
     </Dialog>
   );
