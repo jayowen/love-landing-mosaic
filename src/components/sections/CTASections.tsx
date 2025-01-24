@@ -28,16 +28,6 @@ export const CTASections = () => {
       name: "Books A Million",
       image: "/lovable-uploads/0ac8953e-56bc-4a44-9cc6-2b34abadeb92.png",
       url: "https://www.booksamillion.com/p/Living-Your-Love-Story/Phil-Hopper/9780768483529?id=9377499569056"
-    },
-    {
-      name: "Bookshop",
-      image: "/lovable-uploads/360284a8-a8fc-4d65-a9b4-eb363f029c80.png",
-      url: "https://bookshop.org"
-    },
-    {
-      name: "IndieBound",
-      image: "/lovable-uploads/2e3e8098-8b5b-4db9-9c82-ccfd175dede0.png",
-      url: "https://www.indiebound.org"
     }
   ];
 
