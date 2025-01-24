@@ -12,9 +12,17 @@ export const AuthorSection = () => {
           </div>
           <div className="w-full md:w-2/3 text-center md:text-left">
             <h2 className="font-serif text-3xl md:text-4xl mb-6 opacity-0 animate-[fadeIn_1s_ease-out_forwards] [animation-play-state:paused] scroll-animate">About the Author</h2>
-            <p className="text-gray-600 mb-8 opacity-0 animate-[fadeIn_1.2s_ease-out_forwards] [animation-play-state:paused] scroll-animate">
+            <p className="text-gray-600 mb-4 opacity-0 animate-[fadeIn_1.2s_ease-out_forwards] [animation-play-state:paused] scroll-animate">
               Phil Hopper brings over 25 years of experience as the senior pastor of Abundant Life Church. As a best-selling author, he combines biblical wisdom with practical insights to help people build thriving relationships.
             </p>
+            <a 
+              href="https://philhopper.org" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-book-red hover:text-book-gold transition-colors duration-300 inline-block opacity-0 animate-[fadeIn_1.4s_ease-out_forwards] [animation-play-state:paused] scroll-animate"
+            >
+              Visit Phil's Website →
+            </a>
           </div>
         </div>
       </div>
