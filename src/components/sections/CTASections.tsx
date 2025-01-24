@@ -1,11 +1,10 @@
-import { PreOrderButton } from "@/components/PreOrderButton";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 
 /**
- * Combined CTA sections component containing both pre-order and free chapter CTAs
+ * Combined CTA sections component containing retailer links and free chapter CTAs
  */
 export const CTASections = () => {
   const { toast } = useToast();
@@ -20,18 +19,56 @@ export const CTASections = () => {
     setEmail("");
   };
 
+  const retailers = [
+    {
+      name: "Amazon",
+      image: "/lovable-uploads/3d778331-9f37-47e4-8434-f481b2438325.png",
+      url: "https://www.amazon.com"
+    },
+    {
+      name: "Barnes & Noble",
+      image: "/lovable-uploads/12aa9831-54d3-476f-b933-2e9e647439bd.png",
+      url: "https://www.barnesandnoble.com"
+    },
+    {
+      name: "Books A Million",
+      image: "/lovable-uploads/0ac8953e-56bc-4a44-9cc6-2b34abadeb92.png",
+      url: "https://www.booksamillion.com"
+    },
+    {
+      name: "Bookshop",
+      image: "/lovable-uploads/360284a8-a8fc-4d65-a9b4-eb363f029c80.png",
+      url: "https://bookshop.org"
+    },
+    {
+      name: "IndieBound",
+      image: "/lovable-uploads/2e3e8098-8b5b-4db9-9c82-ccfd175dede0.png",
+      url: "https://www.indiebound.org"
+    }
+  ];
+
   return (
     <>
-      {/* Pre-order CTA */}
-      <section className="bg-book-red text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-serif text-3xl md:text-4xl mb-6">
-            Begin Your Journey Today
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Transform your approach to relationships with timeless wisdom and practical guidance.
-          </p>
-          <PreOrderButton />
+      {/* Retailer Links Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+            {retailers.map((retailer) => (
+              <a
+                key={retailer.name}
+                href={retailer.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-opacity hover:opacity-80"
+              >
+                <img
+                  src={retailer.image}
+                  alt={`Buy on ${retailer.name}`}
+                  className="h-12 md:h-16 w-auto object-contain"
+                />
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
