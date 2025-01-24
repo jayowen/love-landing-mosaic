@@ -1,80 +1,73 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { useEffect } from "react";
+import { Input } from "@/components/ui/input";
+import { useState } from "react";
+import { useToast } from "@/components/ui/use-toast";
 
 export const RequestChapterForm = () => {
-  useEffect(() => {
-    // Load HubSpot form when dialog opens
-    const loadForm = () => {
-      if ((window as any).hbspt) {
-        (window as any).hbspt.forms.create({
-          region: "na1",
-          portalId: "45592170",
-          formId: "1b36054b-938b-4d83-9046-95ba2cea2f38",
-          target: "#hubspot-chapter-form",
-          css: `
-            .hs-form {
-              font-family: 'Inter', sans-serif;
-            }
-            .hs-form-field {
-              margin-bottom: 1rem;
-            }
-            .hs-form-field label {
-              font-family: 'Inter', sans-serif;
-              color: #374151;
-              font-size: 0.875rem;
-              font-weight: 500;
-              margin-bottom: 0.5rem;
-              display: block;
-            }
-            .hs-input {
-              width: 100%;
-              padding: 0.5rem 1rem;
-              border: 1px solid #E5E7EB;
-              border-radius: 0.375rem;
-              font-size: 0.875rem;
-              transition: border-color 0.15s ease-in-out;
-            }
-            .hs-input:focus {
-              outline: none;
-              border-color: #B91C1C;
-              box-shadow: 0 0 0 2px rgba(185, 28, 28, 0.1);
-            }
-            .hs-button {
-              background-color: #B91C1C;
-              color: white;
-              padding: 0.75rem 1.5rem;
-              border-radius: 9999px;
-              font-weight: 600;
-              font-size: 1rem;
-              border: none;
-              cursor: pointer;
-              transition: all 0.3s ease;
-              width: 100%;
-              margin-top: 1rem;
-            }
-            .hs-button:hover {
-              background-color: #991B1B;
-              transform: translateY(-1px);
-            }
-            .hs-error-msg {
-              color: #B91C1C;
-              font-size: 0.75rem;
-              margin-top: 0.25rem;
-            }
-            .submitted-message {
-              color: #374151;
-              font-size: 0.875rem;
-              text-align: center;
-              padding: 1rem;
-            }
-          `
-        });
-      }
-    };
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    email: "",
+    firstname: "",
+    lastname: ""
+  });
 
-    loadForm();
-  }, []);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const portalId = "45592170";
+    const formId = "1b36054b-938b-4d83-9046-95ba2cea2f38";
+    const url = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
+
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          fields: [
+            {
+              name: 'email',
+              value: formData.email
+            },
+            {
+              name: 'firstname',
+              value: formData.firstname
+            },
+            {
+              name: 'lastname',
+              value: formData.lastname
+            }
+          ],
+          context: {
+            pageUri: window.location.href,
+            pageName: document.title
+          }
+        })
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Success!",
+          description: "Your free chapter is on its way to your inbox.",
+        });
+        setFormData({ email: "", firstname: "", lastname: "" });
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was a problem submitting your request. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <Dialog>
@@ -88,11 +81,47 @@ export const RequestChapterForm = () => {
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="font-serif text-2xl">Get Your Free Chapter</DialogTitle>
+          <DialogTitle className="font-serif text-2xl text-center">Get Your Free Chapter</DialogTitle>
         </DialogHeader>
-        <div id="hubspot-chapter-form" className="mt-4">
-          {/* HubSpot form will be loaded here */}
-        </div>
+        <form onSubmit={handleSubmit} className="mt-4 space-y-4">
+          <div>
+            <Input
+              type="text"
+              placeholder="First Name"
+              value={formData.firstname}
+              onChange={(e) => setFormData(prev => ({ ...prev, firstname: e.target.value }))}
+              required
+              className="border-book-red focus-visible:ring-book-red"
+            />
+          </div>
+          <div>
+            <Input
+              type="text"
+              placeholder="Last Name"
+              value={formData.lastname}
+              onChange={(e) => setFormData(prev => ({ ...prev, lastname: e.target.value }))}
+              required
+              className="border-book-red focus-visible:ring-book-red"
+            />
+          </div>
+          <div>
+            <Input
+              type="email"
+              placeholder="Email Address"
+              value={formData.email}
+              onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+              required
+              className="border-book-red focus-visible:ring-book-red"
+            />
+          </div>
+          <Button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full bg-book-red hover:bg-book-gold text-white font-semibold py-6 rounded-full transition-all duration-300"
+          >
+            {isSubmitting ? "Sending..." : "Get Free Chapter"}
+          </Button>
+        </form>
       </DialogContent>
     </Dialog>
   );
