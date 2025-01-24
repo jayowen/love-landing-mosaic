@@ -19,7 +19,7 @@ export const AuthorSection = () => {
               href="https://philhopper.org" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-book-red hover:text-book-gold transition-colors duration-300 inline-block opacity-0 animate-[fadeIn_1.4s_ease-out_forwards] [animation-play-state:paused] scroll-animate"
+              className="text-book-red underline hover:text-book-gold transition-colors duration-300 inline-block opacity-0 animate-[fadeIn_1.4s_ease-out_forwards] [animation-play-state:paused] scroll-animate"
             >
               Visit Phil's Website →
             </a>
