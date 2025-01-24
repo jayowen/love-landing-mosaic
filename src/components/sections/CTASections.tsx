@@ -36,6 +36,9 @@ export const CTASections = () => {
       {/* Retailer Links Section */}
       <section className="py-12 bg-book-red">
         <div className="container mx-auto px-4">
+          <h2 className="font-serif text-3xl md:text-4xl text-white mb-8">
+            BUY THE BOOK NOW
+          </h2>
           <div className="flex flex-nowrap justify-center items-center gap-6 md:gap-8 overflow-x-auto px-4">
             {retailers.map((retailer) => (
               <a
