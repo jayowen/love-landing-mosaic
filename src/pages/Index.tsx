@@ -32,16 +32,6 @@ const Index = () => {
       <AuthorSection />
       <ForewordSection />
       <CTASections />
-      <section id="order" className="scroll-mt-16 py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="font-serif text-3xl md:text-4xl text-center mb-8">
-            Order Your Copy Today
-          </h2>
-          <div id="hubspot-form-container" className="max-w-2xl mx-auto">
-            {/* HubSpot form will be loaded here */}
-          </div>
-        </div>
-      </section>
       <Footer />
     </main>
   );
