@@ -1,84 +1,46 @@
 /**
- * Footer component containing site navigation, resources, and copyright information
+ * Footer component containing site navigation and copyright information
  * Organized in a responsive grid layout with a deep red background matching the brand
  */
 export const Footer = () => {
   return (
     <footer className="bg-red-700 text-white py-16">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* About Column */}
           <div className="space-y-4">
             <h3 className="font-serif text-xl font-bold text-amber-100">About Phil Hopper</h3>
             <p className="text-red-100">
               Best-selling author and senior pastor of Abundant Life Church, bringing biblical wisdom to modern relationships.
             </p>
+            <div className="pt-2">
+              <a 
+                href="https://philhopper.org" 
+                className="text-red-100 hover:text-white transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit PhilHopper.org →
+              </a>
+            </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Church Column */}
           <div className="space-y-4">
-            <h3 className="font-serif text-xl font-bold text-amber-100">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="https://philhopper.com" className="text-red-100 hover:text-white transition-colors">
-                  Official Website
-                </a>
-              </li>
-              <li>
-                <a href="https://philhopper.com/blog" className="text-red-100 hover:text-white transition-colors">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="https://philhopper.com/speaking" className="text-red-100 hover:text-white transition-colors">
-                  Speaking Events
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div className="space-y-4">
-            <h3 className="font-serif text-xl font-bold text-amber-100">Resources</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="https://philhopper.com/books" className="text-red-100 hover:text-white transition-colors">
-                  Other Books
-                </a>
-              </li>
-              <li>
-                <a href="https://philhopper.com/podcasts" className="text-red-100 hover:text-white transition-colors">
-                  Podcasts
-                </a>
-              </li>
-              <li>
-                <a href="https://philhopper.com/videos" className="text-red-100 hover:text-white transition-colors">
-                  Video Content
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Connect */}
-          <div className="space-y-4">
-            <h3 className="font-serif text-xl font-bold text-amber-100">Connect</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="https://philhopper.com/contact" className="text-red-100 hover:text-white transition-colors">
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a href="https://philhopper.com/newsletter" className="text-red-100 hover:text-white transition-colors">
-                  Newsletter
-                </a>
-              </li>
-              <li>
-                <a href="https://philhopper.com/church" className="text-red-100 hover:text-white transition-colors">
-                  Visit Abundant Life
-                </a>
-              </li>
-            </ul>
+            <h3 className="font-serif text-xl font-bold text-amber-100">Visit Our Church</h3>
+            <p className="text-red-100">
+              Join us at Abundant Life Church for powerful teaching and a welcoming community.
+            </p>
+            <div className="pt-2">
+              <a 
+                href="https://livingproof.co/resources/books/"
+                className="text-red-100 hover:text-white transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit Abundant Life Church →
+              </a>
+            </div>
           </div>
         </div>
 
