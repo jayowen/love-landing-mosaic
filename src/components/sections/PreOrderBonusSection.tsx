@@ -15,8 +15,8 @@ export const PreOrderBonusSection = () => {
         
         <div className="flex justify-center items-center mb-12 animate-[fadeIn_1.4s_ease-out]">
           <img
-            src="/lovable-uploads/17f7bce0-0d0d-4c93-b349-d2435c394c7c.png"
-            alt="Conversation Question Example"
+            src="/lovable-uploads/b57c58d9-9a6f-4a70-b2ec-89eb49cc75f2.png"
+            alt="Conversation Categories in App"
             className="w-full max-w-sm rounded-xl shadow-lg hover:scale-105 transition-transform duration-500"
           />
         </div>
