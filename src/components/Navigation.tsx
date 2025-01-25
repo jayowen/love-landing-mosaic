@@ -28,7 +28,7 @@ export const Navigation = () => {
             rel="noopener noreferrer"
             className="text-white hover:text-white/90 transition-colors hover:bg-white/10 px-4 py-2 rounded-md text-base"
           >
-            Love Story Convos App →
+            Love Story Convos App
           </a>
         </div>
       </div>
