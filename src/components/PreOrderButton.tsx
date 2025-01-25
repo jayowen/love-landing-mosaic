@@ -56,9 +56,10 @@ export const PreOrderButton = ({ className, variant, size, ...props }: PreOrderB
           <Button
             variant="ghost"
             className="absolute right-4 top-4 p-2 hover:bg-white/10 text-white"
-            onClick={() => {
-              const closeButton = document.querySelector('[data-state="open"]')?.querySelector('button[type="button"]');
-              if (closeButton) {
+            onClick={(e) => {
+              const dialog = (e.target as HTMLElement).closest('[data-state="open"]');
+              const closeButton = dialog?.querySelector('[data-state="open"] button[type="button"]');
+              if (closeButton instanceof HTMLElement) {
                 closeButton.click();
               }
             }}
