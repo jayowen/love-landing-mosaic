@@ -15,8 +15,8 @@ export const Book3D = () => {
     renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
     mountRef.current.appendChild(renderer.domElement);
 
-    // Book geometry (simple cuboid for now)
-    const geometry = new THREE.BoxGeometry(3, 4, 0.3); // Book proportions
+    // Book geometry (doubled width and thickness)
+    const geometry = new THREE.BoxGeometry(6, 8, 0.6); // Doubled from 3, 4, 0.3
     
     // Load book cover texture
     const textureLoader = new THREE.TextureLoader();
@@ -39,7 +39,8 @@ export const Book3D = () => {
     directionalLight.position.set(5, 5, 5);
     scene.add(directionalLight);
 
-    camera.position.z = 5;
+    // Adjust camera position for larger book
+    camera.position.z = 10; // Increased from 5 to accommodate larger size
 
     // Interactive controls
     let isDragging = false;
