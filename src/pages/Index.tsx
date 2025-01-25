@@ -7,23 +7,12 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { ForewordSection } from "@/components/sections/ForewordSection";
 import { QuoteSection } from "@/components/sections/QuoteSection";
 import { Footer } from "@/components/sections/Footer";
-import { useEffect } from "react";
+import { Navigation } from "@/components/Navigation";
 
 const Index = () => {
-  useEffect(() => {
-    // Load HubSpot form
-    if ((window as any).hbspt) {
-      (window as any).hbspt.forms.create({
-        region: "na1",
-        portalId: "45592170",
-        formId: "f795d320-1093-4392-a191-426739288561",
-        target: "#hubspot-form-container"
-      });
-    }
-  }, []);
-
   return (
     <main className="min-h-screen">
+      <Navigation />
       <HeroSection />
       <QuoteSection />
       <BenefitsSection />

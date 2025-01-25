@@ -1,11 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
+import { VariantProps } from "class-variance-authority";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
-export const PreOrderButton = () => {
+interface PreOrderButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  VariantProps<typeof buttonVariants> {}
+
+export const PreOrderButton = ({ className, variant, size, ...props }: PreOrderButtonProps) => {
   const { toast } = useToast();
 
   const handlePreOrder = () => {
-    // Find the section with "BUY THE BOOK NOW" text
     const sections = document.querySelectorAll('h2');
     const buySection = Array.from(sections).find(section => 
       section.textContent?.includes('BUY THE BOOK NOW')
@@ -23,7 +28,13 @@ export const PreOrderButton = () => {
   return (
     <Button
       onClick={handlePreOrder}
-      className="bg-book-gold hover:bg-book-gold/90 text-white font-semibold px-8 py-6 text-lg rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+      variant={variant || "default"}
+      className={cn(
+        variant !== "ghost" && "bg-book-gold hover:bg-book-gold/90 text-white",
+        "font-semibold px-8 py-6 text-lg rounded-full transition-all duration-300 shadow-lg hover:shadow-xl",
+        className
+      )}
+      {...props}
     >
       Order Now
     </Button>
