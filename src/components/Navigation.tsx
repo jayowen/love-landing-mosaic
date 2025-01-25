@@ -14,14 +14,6 @@ export const Navigation = () => {
 
         {/* Navigation Links */}
         <div className="flex items-center gap-4 flex-wrap justify-center">
-          <PreOrderButton 
-            variant="ghost" 
-            size="sm"
-            className="text-white hover:text-white/90 hover:bg-white/10 px-4 py-2 rounded-md text-base" 
-          />
-          <RequestChapterForm 
-            className="text-white hover:text-white/90 hover:bg-white/10 px-4 py-2 rounded-md text-base"
-          />
           <a
             href="https://lovestoryconvos.com/"
             target="_blank"
@@ -30,6 +22,14 @@ export const Navigation = () => {
           >
             Love Story Convos App
           </a>
+          <RequestChapterForm 
+            className="text-white hover:text-white/90 hover:bg-white/10 px-4 py-2 rounded-md text-base"
+          />
+          <PreOrderButton 
+            variant="ghost" 
+            size="sm"
+            className="text-white hover:text-white/90 hover:bg-white/10 px-4 py-2 rounded-md text-base" 
+          />
         </div>
       </div>
     </nav>
