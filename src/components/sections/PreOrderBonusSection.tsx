@@ -4,14 +4,14 @@ import { ExternalLink } from "lucide-react";
 
 export const PreOrderBonusSection = () => {
   return (
-    <section className="bg-gradient-to-br from-gray-50 to-white py-16">
+    <section className="bg-white py-16">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
           <div className="w-full md:w-1/2 animate-[fadeIn_1.4s_ease-out]">
             <img
               src="/lovable-uploads/b57c58d9-9a6f-4a70-b2ec-89eb49cc75f2.png"
               alt="Conversation Categories in App"
-              className="w-full max-w-sm mx-auto md:mx-0 rounded-xl shadow-lg hover:scale-105 transition-transform duration-500"
+              className="w-full max-w-sm mx-auto md:mx-0 hover:scale-105 transition-transform duration-500"
             />
           </div>
           
