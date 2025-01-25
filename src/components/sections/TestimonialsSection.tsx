@@ -13,6 +13,7 @@ const testimonials = [
     role: "Pastor",
     image: "/lovable-uploads/df3ce96a-cc7b-4de1-b3ce-09afaed08c3e.png",
     quote: "This book will help you navigate the complexities of relationships, sex, and marriage if you will lean in.",
+    link: "https://jobymartin.com"
   },
   {
     name: "Heidi St. John",
@@ -39,10 +40,11 @@ export const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <Card 
               key={testimonial.name}
-              className="scroll-animate hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="scroll-animate hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
               style={{
                 animationDelay: `${index * 200}ms`,
               }}
+              onClick={() => testimonial.link && window.open(testimonial.link, '_blank')}
             >
               <CardContent className="p-6 text-center">
                 <div className="flex justify-center mb-4">
