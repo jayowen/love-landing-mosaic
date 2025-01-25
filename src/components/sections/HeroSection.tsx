@@ -1,5 +1,6 @@
 import { PreOrderButton } from "@/components/PreOrderButton";
 import { RequestChapterForm } from "@/components/RequestChapterForm";
+import { Book3D } from "@/components/Book3D";
 
 export const HeroSection = () => {
   return (
@@ -33,12 +34,8 @@ export const HeroSection = () => {
               <RequestChapterForm />
             </div>
           </div>
-          <div className="flex-1 flex justify-center animate-[fadeIn_1.8s_ease-out] hover:scale-105 transition-transform duration-500">
-            <img
-              src="/lovable-uploads/d57ec37b-0ecf-455c-83ba-4d79fd3744b7.png"
-              alt="Living Your Love Story Book Cover"
-              className="w-full max-w-md shadow-2xl rounded-lg"
-            />
+          <div className="flex-1 flex justify-center animate-[fadeIn_1.8s_ease-out]">
+            <Book3D />
           </div>
         </div>
       </div>
