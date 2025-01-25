@@ -4,7 +4,11 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 
-export const RequestChapterForm = () => {
+interface RequestChapterFormProps {
+  className?: string;
+}
+
+export const RequestChapterForm = ({ className }: RequestChapterFormProps) => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -72,12 +76,9 @@ export const RequestChapterForm = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button
-          variant="outline"
-          className="bg-white text-book-red hover:bg-gray-50 border-book-red font-semibold px-8 py-6 text-lg rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
-        >
+        <button className={className}>
           Get Free Chapter
-        </Button>
+        </button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>

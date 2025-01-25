@@ -13,18 +13,20 @@ export const Navigation = () => {
         </div>
 
         {/* Navigation Links */}
-        <div className="flex items-center gap-4 flex-wrap justify-center text-sm">
+        <div className="flex items-center gap-4 flex-wrap justify-center">
           <PreOrderButton 
             variant="ghost" 
             size="sm"
-            className="text-white hover:text-white/90 hover:bg-white/10" 
+            className="text-white hover:text-white/90 hover:bg-white/10 px-4 py-2 rounded-md text-base" 
           />
-          <RequestChapterForm />
+          <RequestChapterForm 
+            className="text-white hover:text-white/90 hover:bg-white/10 px-4 py-2 rounded-md text-base"
+          />
           <a
             href="https://lovestoryconvos.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-white/90 transition-colors hover:bg-white/10 px-4 py-2 rounded-md"
+            className="text-white hover:text-white/90 transition-colors hover:bg-white/10 px-4 py-2 rounded-md text-base"
           >
             Love Story Convos App →
           </a>
