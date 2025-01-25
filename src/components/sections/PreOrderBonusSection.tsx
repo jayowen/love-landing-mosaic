@@ -13,21 +13,12 @@ export const PreOrderBonusSection = () => {
           Questions to help you go deeper in your relationship in an easy to use app.
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
-          <div className="flex justify-center items-center animate-[fadeIn_1.2s_ease-out]">
-            <img
-              src="/lovable-uploads/f7de9346-c65d-43c6-b7fa-b50a163c02a8.png"
-              alt="Conversation Categories"
-              className="w-full max-w-sm rounded-xl shadow-lg hover:scale-105 transition-transform duration-500"
-            />
-          </div>
-          <div className="flex justify-center items-center animate-[fadeIn_1.4s_ease-out]">
-            <img
-              src="/lovable-uploads/17f7bce0-0d0d-4c93-b349-d2435c394c7c.png"
-              alt="Conversation Question Example"
-              className="w-full max-w-sm rounded-xl shadow-lg hover:scale-105 transition-transform duration-500"
-            />
-          </div>
+        <div className="flex justify-center items-center mb-12 animate-[fadeIn_1.4s_ease-out]">
+          <img
+            src="/lovable-uploads/17f7bce0-0d0d-4c93-b349-d2435c394c7c.png"
+            alt="Conversation Question Example"
+            className="w-full max-w-sm rounded-xl shadow-lg hover:scale-105 transition-transform duration-500"
+          />
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-[fadeIn_1.6s_ease-out]">
