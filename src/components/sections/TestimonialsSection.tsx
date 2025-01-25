@@ -20,6 +20,7 @@ const testimonials = [
     role: "Author",
     image: "/lovable-uploads/29bc5aa2-e2ad-483c-8dac-2466effb654b.png",
     quote: "This book will encourage you as you navigate a sexually confused culture through the eyes of a disciple of Jesus.",
+    link: "https://www.heidistjohn.net"
   },
   {
     name: "Léonce B. Crump Jr.",
