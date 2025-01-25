@@ -5,16 +5,19 @@ export const PreOrderButton = () => {
   const { toast } = useToast();
 
   const handlePreOrder = () => {
-    // Smooth scroll to order section
-    const orderSection = document.getElementById('order');
-    if (orderSection) {
-      orderSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    // Find the section with "BUY THE BOOK NOW" text
+    const sections = document.querySelectorAll('h2');
+    const buySection = Array.from(sections).find(section => 
+      section.textContent?.includes('BUY THE BOOK NOW')
+    );
     
-    toast({
-      title: "Ready to order!",
-      description: "Please complete the form below to order your copy.",
-    });
+    if (buySection) {
+      buySection.scrollIntoView({ behavior: 'smooth' });
+      toast({
+        title: "Ready to order!",
+        description: "Choose your preferred retailer below.",
+      });
+    }
   };
 
   return (
