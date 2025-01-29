@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import {
   AlertDialog,
   AlertDialogContent,
+  AlertDialogDescription,
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
@@ -10,11 +11,14 @@ import { X } from "lucide-react";
 import { VariantProps } from "class-variance-authority";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 interface PreOrderButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>,
   VariantProps<typeof buttonVariants> {}
 
 export const PreOrderButton = ({ className, variant, size, ...props }: PreOrderButtonProps) => {
+  const [open, setOpen] = useState(false);
+
   const retailers = [
     {
       name: "Amazon",
@@ -34,7 +38,7 @@ export const PreOrderButton = ({ className, variant, size, ...props }: PreOrderB
   ];
 
   return (
-    <AlertDialog>
+    <AlertDialog open={open} onOpenChange={setOpen}>
       <AlertDialogTrigger asChild>
         <Button
           variant={variant || "default"}
@@ -53,16 +57,13 @@ export const PreOrderButton = ({ className, variant, size, ...props }: PreOrderB
           <AlertDialogTitle className="font-serif text-3xl text-center mb-8">
             Choose Your Retailer
           </AlertDialogTitle>
+          <AlertDialogDescription className="sr-only">
+            Select a retailer to purchase the book
+          </AlertDialogDescription>
           <Button
             variant="ghost"
             className="absolute right-4 top-4 p-2 hover:bg-white/10 text-white"
-            onClick={(e) => {
-              const dialog = (e.target as HTMLElement).closest('[data-state="open"]');
-              const closeButton = dialog?.querySelector('[data-state="open"] button[type="button"]');
-              if (closeButton instanceof HTMLElement) {
-                closeButton.click();
-              }
-            }}
+            onClick={() => setOpen(false)}
           >
             <X className="h-6 w-6" />
           </Button>
