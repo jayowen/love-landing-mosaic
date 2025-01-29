@@ -72,6 +72,8 @@ export const CTASections = () => {
           description: "Your free chapter is on its way to your inbox.",
         });
         setFormData({ email: "", firstname: "", lastname: "" });
+        // Open the redirect URL in a new window
+        window.open("https://hubs.ly/Q034C0R-0", "_blank");
       } else {
         throw new Error('Submission failed');
       }
