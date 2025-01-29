@@ -59,6 +59,8 @@ export const RequestChapterForm = ({ className }: RequestChapterFormProps) => {
           description: "Your free chapter is on its way to your inbox.",
         });
         setFormData({ email: "", firstname: "", lastname: "" });
+        // Redirect to the specified URL after successful submission
+        window.location.href = "https://hubs.ly/Q034C0R-0";
       } else {
         throw new Error('Submission failed');
       }
